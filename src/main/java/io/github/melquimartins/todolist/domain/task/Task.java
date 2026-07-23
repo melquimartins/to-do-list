@@ -17,40 +17,42 @@ import java.time.LocalDateTime;
 @Table(name = "tasks")
 public class Task {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @Column(nullable = false)
-  private String title;
+    @Column(nullable = false)
+    private String title;
 
-  private String description;
+    private String description;
 
-  @Column(nullable = false)
-  private Boolean completed = false;
+    @Column(nullable = false)
+    private Boolean completed = false;
 
-  @Column(nullable = false)
-  private PriorityLevel priorityLevel = PriorityLevel.LOW;
+    @Column(nullable = false)
+    private PriorityLevel priorityLevel = PriorityLevel.LOW;
 
-  @CreationTimestamp
-  @Column(name = "created_at")
-  private LocalDateTime createdAt;
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
-  @UpdateTimestamp
-  @Column(name = "updated_at")
-  private LocalDateTime updatedAt;
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
-  public Task() {}
-  public Task(
-        String title,
-        String description,
-        Boolean completed,
-        PriorityLevel priorityLevel
-  ) {
-    this.title = title;
-    this.description = description;
-    this.completed = completed;
-    this.priorityLevel = priorityLevel;
-  }
+    public Task() {
+    }
+
+    public Task(
+            String title,
+            String description,
+            Boolean completed,
+            PriorityLevel priorityLevel
+    ) {
+        this.title = title;
+        this.description = description;
+        this.completed = completed;
+        this.priorityLevel = priorityLevel;
+    }
 
 }
